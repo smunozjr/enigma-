@@ -1,6 +1,7 @@
 require 'pry'
 
 class Enigma
+  attr_reader :key_offsets
 
   def initialize
     @key_generator = key_generator
@@ -12,16 +13,12 @@ class Enigma
     @key_generator = rand(10000..99999)
   end
 
-  def offset_a
+  def key_offset
     key_array = @key_generator.digits.reverse
     @key_offsets << key_array[0..1].join.to_i
-    binding.pry
     @key_offsets << key_array[1..2].join.to_i
-    binding.pry
     @key_offsets << key_array[2..3].join.to_i
-    binding.pry
     @key_offsets << key_array[3..4].join.to_i
-    binding.pry
   end
   #
   # def offset_a

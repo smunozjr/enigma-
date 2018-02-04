@@ -24,6 +24,7 @@ class DateOffset
 
   def initialize
     @date = Time.now
+
   end
 
 
@@ -45,13 +46,15 @@ class DateOffset
     formatted_date_arr.join.to_i
   end
 
-  # def date_squared
-  #
-  #   formatted_date_arr = formatted_date_arr.join
-  #   binding.pry
-  #   year_squared = formatted_date_arr ** 2
-  #   binding.pry
-  #   offset_quared = year_squared.to_s.split
-  #   binding.pry
-  # end
+  def date_squared
+
+    squared = (date_formatter ** 2).to_s.split("")
+    squared = squared.slice(6,4)
+    squared = squared.map do |number|
+      number.to_i
+    end
+    # binding.pry
+  end
+
+
 end

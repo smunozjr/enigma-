@@ -39,4 +39,18 @@ class EnigmaTest < Minitest::Test
     assert_instance_of DateOffset, date_offset
   end
 
+  # def test_date_squared
+  #   date_offset = DateOffset.new
+  #   result = date_offset.date_squared
+  #   assert_equal 1617487524, result
+  #
+  # end
+
+  def test_date_squared_split
+    date_offset = DateOffset.new
+    result = date_offset.date_squared
+    assert_equal [7,5,2,4], result
+
+  end
+
 end

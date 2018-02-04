@@ -54,11 +54,32 @@ class EnigmaTest < Minitest::Test
     assert_equal [7,5,2,4], result
   end
 
-  def test_the_sum_of_date_offset_key_offset
+  def test_the_sum_of_rotation_a
     date_offset = DateOffset.new
     result = date_offset.rotation_a
 
     assert_equal 63, result
+  end
+
+  def test_the_sum_of_rotation_b
+    date_offset = DateOffset.new
+    result = date_offset.rotation_b
+
+    assert_equal 72, result
+  end
+
+  def test_the_sum_of_rotation_c
+    date_offset = DateOffset.new
+    result = date_offset.rotation_c
+
+    assert_equal 80, result
+  end
+
+  def test_the_sum_of_rotation_d
+    date_offset = DateOffset.new
+    result = date_offset.rotation_d
+
+    assert_equal 93, result
   end
 
 end

@@ -5,9 +5,13 @@ class Key
               :key_offsets
 
   def initialize
-    @key = rand(10000..99999)
+    @key = 56789
     @key_offsets = []
   end
+
+  # def random_key
+  #   @key = rand(10000..99999)
+  # end
 
   def offset
     key_array = @key.digits.reverse
@@ -32,28 +36,28 @@ class DateOffset
     formatted_date_arr = []
     year = ""
     date_to_string = ""
-
     date_to_string = date.to_s
     date_to_string = date_to_string.split[0]
-
     formatted_date_arr << date_to_string.split("-")[2]
     formatted_date_arr << date_to_string.split("-")[1]
     year = date_to_string.split("-")[0]
     year = year.chars.join
     year = year.slice(2,2)
     formatted_date_arr << year
-
     formatted_date_arr.join.to_i
   end
 
   def date_squared
-
     squared = (date_formatter ** 2).to_s.split("")
     squared = squared.slice(6,4)
     squared = squared.map do |number|
       number.to_i
     end
-    # binding.pry
+  end
+
+  def rotation_a
+    key = Key.new.offset[0]
+    sum_a = key + date_squared[0]
   end
 
 

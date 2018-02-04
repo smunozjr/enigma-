@@ -27,7 +27,6 @@ class EnigmaTest < Minitest::Test
 
   def test_key_count
     key = Key.new
-
     key.offset
 
     assert_equal 4, key.key_offsets.count
@@ -36,12 +35,14 @@ class EnigmaTest < Minitest::Test
   def test_date_offset
     date_offset = DateOffset.new
     date_offset.date_formatter
+
     assert_instance_of DateOffset, date_offset
   end
 
   # def test_date_squared
   #   date_offset = DateOffset.new
   #   result = date_offset.date_squared
+  #
   #   assert_equal 1617487524, result
   #
   # end
@@ -49,8 +50,15 @@ class EnigmaTest < Minitest::Test
   def test_date_squared_split
     date_offset = DateOffset.new
     result = date_offset.date_squared
-    assert_equal [7,5,2,4], result
 
+    assert_equal [7,5,2,4], result
+  end
+
+  def test_the_sum_of_date_offset_key_offset
+    date_offset = DateOffset.new
+    result = date_offset.rotation_a
+
+    assert_equal 63, result
   end
 
 end

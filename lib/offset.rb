@@ -60,5 +60,20 @@ class DateOffset
     sum_a = key + date_squared[0]
   end
 
+  def rotation_b
+    key = Key.new.offset[1]
+    sum_b = key + date_squared[1]
+  end
+
+  def rotation_c
+    key = Key.new.offset[2]
+    sum_c = key + date_squared[2]
+  end
+
+  def rotation_d
+    key = Key.new.offset[3]
+    sum_d = key + date_squared[3]
+  end
+
 
 end

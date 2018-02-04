@@ -10,28 +10,39 @@ class EnigmaTest < Minitest::Test
     assert_instance_of Enigma, enigma
   end
 
+  def test_enigma_character_map
+    enigma = Enigma.new
 
+    result = enigma.character_map[19]
 
-  # def test_offset_method_exists
-  #   enigma = Enigma.new
-  #
-  #   assert_equal 40218, enigma.formatted_date
-  # end
-  #
-  # def test_offset_squared
-  #   enigma = Enigma.new
-  #   enigma.date_formatter(Time.now)
-  #   assert_equal 1617487524, enigma.date_squared
-  # end
+    assert_equal "t", result
+  end
 
-  # def test_default_for_offset_method
-  #   enigma = Enigma.new
-  #
-  #   expected = 40218
-  #   result =
-  #
-  #   assert
-  # end
+  def test_encrypt_single_letter
+    enigma = Enigma.new
 
+    result = enigma.encrypt("t")
+    expected = "e"
+
+    assert_equal expected, result
+  end
+
+  def test_two_letters
+    enigma = Enigma.new
+
+    result = enigma.encrypt("ty")
+    expected = "es"
+
+    assert_equal expected, result
+  end
+
+  def test_four_letters
+    enigma = Enigma.new
+
+    result = enigma.encrypt("tyle")
+    expected = "esnt"
+
+    assert_equal expected, result
+  end
 
 end

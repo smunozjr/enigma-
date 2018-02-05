@@ -8,9 +8,9 @@ class Key
     @key_offsets = []
   end
 
-  # def random_key
-  #   @key = rand(10000..99999)
-  # end
+  def random_key
+    @key = rand(10000..99999)
+  end
 
   def offset
     key_array = @key.digits.reverse
@@ -23,7 +23,8 @@ class Key
 end
 
 class DateOffset
-    attr_reader :date
+    attr_reader :date,
+                :rotation
 
   def initialize
     @date = Time.now

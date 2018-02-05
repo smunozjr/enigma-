@@ -52,7 +52,6 @@ class OffsetTest < Minitest::Test
 
     assert_equal [], result
   end
-=======
   def test_date_offset_exists
     date_offset = DateOffset.new
     date_offset.date_formatter
@@ -76,5 +75,4 @@ class OffsetTest < Minitest::Test
     assert_equal 4, result
   end
 
->>>>>>> f4d47cc5302208e632c35569fa6bc5c20eab75f0
 end

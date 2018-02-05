@@ -22,7 +22,7 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
 
     result = enigma.encrypt("t")
-    expected = "e"
+    expected = "2"
 
     assert_equal expected, result
   end
@@ -31,7 +31,7 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
 
     result = enigma.encrypt("ty")
-    expected = "es"
+    expected = "2f"
 
     assert_equal expected, result
   end
@@ -40,9 +40,19 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
 
     result = enigma.encrypt("tyle")
-    expected = "esnt"
+    expected = "2f03"
 
     assert_equal expected, result
   end
+
+  def test_for_five_letters
+    enigma = Enigma.new
+
+    result = enigma.encrypt("tyle")
+    expected = "2f030"
+    assert_equal expected, result
+  end
+
+
 
 end

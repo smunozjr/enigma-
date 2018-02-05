@@ -89,5 +89,4 @@ class EnigmaTest < Minitest::Test
   #
   #   assert_equal 93, result
   # end
-
 end

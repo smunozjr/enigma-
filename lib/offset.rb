@@ -2,7 +2,6 @@ require 'pry'
 
 class Key
   attr_reader :key
-              # :key_offsets
 
   def initialize
     @key = 56789
@@ -29,7 +28,6 @@ class DateOffset
   def initialize
     @date = Time.now
     @rotation = []
-
   end
 
 
@@ -56,30 +54,6 @@ class DateOffset
     end
   end
 
-  # def rotation_a
-  #   key = Key.new.offset[0]
-  #   sum_a = key + date_squared[0]
-  # end
-  #
-  # def rotation_b
-  #   key = Key.new.offset[1]
-  #   sum_b = key + date_squared[1]
-  # end
-  #
-  # def rotation_c
-  #   key = Key.new.offset[2]
-  #   sum_c = key + date_squared[2]
-  # end
-  #
-  # def rotation_d
-  #   key = Key.new.offset[3]
-  #   sum_d = key + date_squared[3]
-  # end
-  #
-  # def rotation_numbers
-  #   rotation << rotation_a
-  # end
-
   def rotation_sequence
     key = Key.new
     sum_a = key.offset[0] + date_squared[0]
@@ -91,5 +65,4 @@ class DateOffset
     @rotation << sum_c
     @rotation << sum_d
   end
-
 end

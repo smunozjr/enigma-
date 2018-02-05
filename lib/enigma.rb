@@ -1,5 +1,6 @@
 require './lib/offset'
-require "Date"
+require './lib/key'
+
 require 'pry'
 
 class Enigma
@@ -15,15 +16,13 @@ class Enigma
   def encrypt(string)
     #We need to create an until loop to iterate from count 3 back to count 0
     count = 0
-    final = []
     date = DateOffset.new
     letters = string.split("")
     letters.map do |letter|
       index_value_t = @character_map.index(letter)
       encr_index_t = (index_value_t + date.rotation_sequence[count]) % 39
-      final << @character_map[encr_index_t]
       count += 1
-    end
-    final.join
+      @character_map[encr_index_t]
+    end.join
   end
 end

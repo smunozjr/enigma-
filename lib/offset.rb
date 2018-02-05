@@ -4,7 +4,6 @@ require 'pry'
 
 
 class DateOffset
-  attr_reader :date
 
   def initialize
     @date = Date.today

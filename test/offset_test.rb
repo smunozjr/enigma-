@@ -2,8 +2,9 @@ require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/offset'
 
-class EnigmaTest < Minitest::Test
+class OffsetTest < Minitest::Test
 
+<<<<<<< HEAD
   def test_it_exists
     key = Key.new
 
@@ -51,4 +52,29 @@ class EnigmaTest < Minitest::Test
 
     assert_equal [], result
   end
+=======
+  def test_date_offset_exists
+    date_offset = DateOffset.new
+    date_offset.date_formatter
+
+    assert_instance_of DateOffset, date_offset
+  end
+
+  def test_date_squared
+    date_offset = DateOffset.new
+    result = date_offset.date_squared.count
+
+    assert_equal 4, result
+
+  end
+
+  def test_new_date_offset
+    date = DateOffset.new
+
+    result = date.rotation_sequence.count
+
+    assert_equal 4, result
+  end
+
+>>>>>>> f4d47cc5302208e632c35569fa6bc5c20eab75f0
 end

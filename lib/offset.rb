@@ -1,43 +1,20 @@
+require 'Date'
+require './lib/key'
 require 'pry'
-
-class Key
-  attr_reader :key
-
-  def initialize
-    @key = 56789
-    @key_offsets = []
-  end
-
-  def random_key
-    @key = rand(10000..99999)
-  end
-
-  def offset
-    key_array = @key.digits.reverse
-    @key_offsets << key_array[0..1].join.to_i
-    @key_offsets << key_array[1..2].join.to_i
-    @key_offsets << key_array[2..3].join.to_i
-    @key_offsets << key_array[3..4].join.to_i
-  end
-
-end
 
 class DateOffset
     attr_reader :date,
                 :rotation
 
   def initialize
-    @date = Time.now
+    @date = Date.today
+    # @date = Time.now
     @rotation = []
   end
 
-
   def date_formatter
     formatted_date_arr = []
-    year = ""
-    date_to_string = ""
     date_to_string = date.to_s
-    date_to_string = date_to_string.split[0]
     formatted_date_arr << date_to_string.split("-")[2]
     formatted_date_arr << date_to_string.split("-")[1]
     year = date_to_string.split("-")[0]

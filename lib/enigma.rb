@@ -1,10 +1,7 @@
 require './lib/offset'
-
-
 require 'pry'
 
 class Enigma
-
   attr_reader :character_map
 
   def initialize
@@ -28,10 +25,4 @@ class Enigma
     end
     final.join
   end
-
-
-
-
-
-
 end

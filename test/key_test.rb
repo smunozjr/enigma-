@@ -17,7 +17,7 @@ class KeyTest < Minitest::Test
   end
 
   def test_creation_of_random_number
-    key(56789) = Key.new
+    key = Key.new(41521)
 
     result = key.key
     expected = (10000...99999).to_a

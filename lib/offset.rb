@@ -2,19 +2,17 @@ require 'Date'
 require './lib/key'
 require 'pry'
 
+
 class DateOffset
-    attr_reader :date,
-                :rotation
 
   def initialize
     @date = Date.today
-    # @date = Time.now
     @rotation = []
   end
 
   def date_formatter
     formatted_date_arr = []
-    date_to_string = date.to_s
+    date_to_string = @date.to_s
     formatted_date_arr << date_to_string.split("-")[2]
     formatted_date_arr << date_to_string.split("-")[1]
     year = date_to_string.split("-")[0]
@@ -27,7 +25,7 @@ class DateOffset
   def date_squared
     squared = (date_formatter ** 2).to_s.split("")
     squared = squared.slice(6,4)
-    squared = squared.map do |number|
+    squared.map do |number|
       number.to_i
     end
   end

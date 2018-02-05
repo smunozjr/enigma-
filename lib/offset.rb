@@ -3,7 +3,8 @@ require './lib/key'
 require 'pry'
 
 class DateOffset
-    attr_reader :date
+    attr_reader :date,
+                :rotation
 
   def initialize
     @date = Date.today

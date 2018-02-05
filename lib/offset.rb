@@ -1,7 +1,9 @@
+require 'Date'
 require 'pry'
 
 class Key
-  attr_reader :key
+  attr_reader :key,
+              :key_offsets
 
   def initialize
     @key = 56789
@@ -26,17 +28,14 @@ class DateOffset
     attr_reader :date
 
   def initialize
-    @date = Time.now
+    @date = Date.today
+    # @date = Time.now
     @rotation = []
   end
 
-
   def date_formatter
     formatted_date_arr = []
-    year = ""
-    date_to_string = ""
     date_to_string = date.to_s
-    date_to_string = date_to_string.split[0]
     formatted_date_arr << date_to_string.split("-")[2]
     formatted_date_arr << date_to_string.split("-")[1]
     year = date_to_string.split("-")[0]

@@ -31,7 +31,7 @@ class DateOffset
   end
 
   def rotation_sequence
-    key = Key.new
+    key = Key.new(41521)
     sum_a = key.offset[0] + date_squared[0]
     sum_b = key.offset[1] + date_squared[1]
     sum_c = key.offset[2] + date_squared[2]
@@ -40,5 +40,6 @@ class DateOffset
     @rotation << sum_b
     @rotation << sum_c
     @rotation << sum_d
+    binding.pry
   end
 end

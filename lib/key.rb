@@ -4,14 +4,10 @@ class Key
   attr_reader :key,
               :key_offsets
 
-  def initialize
-    @key = 56789
+  def initialize(key = rand(10000..99999))
+    @key = key
     @key_offsets = []
   end
-
-  # def random_key
-  #   @key = rand(10000..99999)
-  # end
 
   def offset
     key_array = @key.digits.reverse

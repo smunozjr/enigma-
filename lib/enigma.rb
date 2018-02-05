@@ -14,15 +14,31 @@ class Enigma
   end
 
   def encrypt(string)
-    #We need to create an until loop to iterate from count 3 back to count 0
+    output_arr = []
     count = 0
     date = DateOffset.new
-    letters = string.split("")
-    letters.map do |letter|
-      index_value_t = @character_map.index(letter)
-      encr_index_t = (index_value_t + date.rotation_sequence[count]) % 39
+    string.to_s.chars.map do |letter|
+      if count == 4
+        count = 0
+      end
+      index_value = @character_map.index(letter)
+      encr_index = (index_value + date.rotation_sequence[count]) % 39
       count += 1
-      @character_map[encr_index_t]
-    end.join
+      output_arr << @character_map[encr_index]
+    end
+      output_arr.join
   end
+
+  # def encrypt(string)
+  #   #We need to create an until loop to iterate from count 3 back to count 0
+  #   count = 0
+  #   date = DateOffset.new
+  #   letters = string.split("")
+  #   letters.map do |letter|
+  #     index_value_t = @character_map.index(letter)
+  #     encr_index_t = (index_value_t + date.rotation_sequence[count]) % 39
+  #     count += 1
+  #     @character_map[encr_index_t]
+  #   end.join
+  # end
 end

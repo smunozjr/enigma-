@@ -71,6 +71,7 @@ class OffsetTest < Minitest::Test
     date = DateOffset.new
 
     result = date.rotation_sequence.count
+    binding.pry
 
     assert_equal 4, result
   end

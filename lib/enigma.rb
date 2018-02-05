@@ -1,4 +1,5 @@
 require './lib/offset'
+require "Date"
 require 'pry'
 
 class Enigma

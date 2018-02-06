@@ -5,9 +5,8 @@ require 'pry'
 
 class DateOffset
 
-  def initialize
-    @date = Date.today
-    @rotation = []
+  def initialize(date = Date.today)
+    @date = date
   end
 
   def date_formatter
@@ -29,7 +28,7 @@ class DateOffset
       number.to_i
     end
   end
-
+ 
   def rotation_sequence
     key = Key.new(41521)
     sum_a = key.offset[0] + date_squared[0]

@@ -4,7 +4,7 @@ class Key
   attr_reader :key,
               :key_offsets
 
-  def initialize#(key = rand(10000..99999))
+  def initialize
     @key = key
     @key_offsets = []
   end

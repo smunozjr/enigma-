@@ -11,24 +11,18 @@ class KeyTest < Minitest::Test
     assert_instance_of Key, key
   end
 
-  def test_key_generator_exists
+  def test_takes_arguement_for_key
     key = Key.new
 
-    assert key.key
+    result = key.random_key(41521)
+    expected = [41, 15, 52, 21]
+
+    assert_equal expected, result
   end
 
-  def test_creation_of_random_number
-    key = Key.new(41521)
-
-    result = key.key
-    expected = (10000...99999).to_a
-
-    assert_includes expected, result
-  end
-
-  def test_key_count
+  def test_random_key_count
     key = Key.new
-    key.offset
+    key.random_key
 
     assert_equal 4, key.key_offsets.length
   end

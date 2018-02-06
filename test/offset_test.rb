@@ -2,9 +2,11 @@ require 'simplecov'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/offset'
+require 'pry'
 
 class OffsetTest < Minitest::Test
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   def test_it_exists
     key = Key.new
@@ -54,18 +56,37 @@ class OffsetTest < Minitest::Test
     assert_equal [], result
   end
   def test_date_offset_exists
+=======
+  def test_date_uses_current_date_as_arg
+>>>>>>> 78bb3423f056e0d80f71fa2b776a6b4070b284b4
     date_offset = DateOffset.new
     date_offset.date_formatter
 
     assert_instance_of DateOffset, date_offset
   end
 
+  def test_takes_an_arguement
+    offset = DateOffset.new
+
+    offset.date_formatter(30415)
+
+    assert_instance_of DateOffset, offset
+  end
+
   def test_date_squared
-    date_offset = DateOffset.new
-    result = date_offset.date_squared.count
+    offset = DateOffset.new
+    result = offset.date_squared.count
 
     assert_equal 4, result
+  end
 
+  def test_date_arr_from_arv
+    offset = DateOffset.new
+
+    result = offset.date_squared("030415")
+    expected = [2, 2, 2, 5]
+
+    assert_equal expected, result
   end
 
 end

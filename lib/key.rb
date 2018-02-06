@@ -15,6 +15,7 @@ class Key
     @key_offsets << key_array[1..2].join.to_i
     @key_offsets << key_array[2..3].join.to_i
     @key_offsets << key_array[3..4].join.to_i
+    binding.pry
   end
 
 end

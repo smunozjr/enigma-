@@ -45,4 +45,14 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, result
   end
 
+  def test_for_five_letters
+    enigma = Enigma.new
+
+    result = enigma.encrypt("tyle")
+    expected = "2f030"
+    assert_equal expected, result
+  end
+
+
+
 end

@@ -10,7 +10,6 @@ class Rotator
     @rotation = []
   end
 
-
   def rotation_sequence(key=rand(10000..99999), date=Date.today)
     key1 = Key.new
     offset = DateOffset.new

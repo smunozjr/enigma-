@@ -5,10 +5,6 @@ require './lib/offset'
 require 'pry'
 
 class OffsetTest < Minitest::Test
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   def test_it_exists
     key = Key.new
 
@@ -56,13 +52,8 @@ class OffsetTest < Minitest::Test
 
     assert_equal [], result
   end
-  def test_date_offset_exists
-=======
+
   def test_date_uses_current_date_as_arg
->>>>>>> 78bb3423f056e0d80f71fa2b776a6b4070b284b4
-=======
-  def test_date_uses_current_date_as_arg
->>>>>>> c9d92a399a33d79ca6d2df82d11cd2c330112d41
     date_offset = DateOffset.new
     date_offset.date_formatter
 
@@ -86,7 +77,6 @@ class OffsetTest < Minitest::Test
 
   def test_date_arr_from_arv
     offset = DateOffset.new
-
     result = offset.date_squared("030415")
     expected = [2, 2, 2, 5]
 

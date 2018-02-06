@@ -6,22 +6,21 @@ require 'pry'
 
 
 class Rotator
-  def initialize(key=rand(10000..99999), date=Date.today)
-    @key = Key.new(key)
-    @offset = DateOffset.new(date).date_squared
+  def initialize
     @rotation = []
   end
 
-  def rotation_sequence
-    sum_a = @key.offset[0] + @offset[0]
-    sum_b = @key.offset[1] + @offset[1]
-    sum_c = @key.offset[2] + @offset[2]
-    sum_d = @key.offset[3] + @offset[3]
+
+  def rotation_sequence(key=rand(10000..99999), date=Date.today)
+    key1 = Key.new
+    offset = DateOffset.new
+    sum_a = key1.random_key(key)[0] + offset.date_squared(date)[0]
+    sum_b = key1.random_key(key)[1] + offset.date_squared(date)[1]
+    sum_c = key1.random_key(key)[2] + offset.date_squared(date)[2]
+    sum_d = key1.random_key(key)[3] + offset.date_squared(date)[3]
     @rotation << sum_a
     @rotation << sum_b
     @rotation << sum_c
     @rotation << sum_d
   end
-
-
 end

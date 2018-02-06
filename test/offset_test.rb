@@ -8,6 +8,7 @@ class OffsetTest < Minitest::Test
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   def test_it_exists
     key = Key.new
 
@@ -59,6 +60,9 @@ class OffsetTest < Minitest::Test
 =======
   def test_date_uses_current_date_as_arg
 >>>>>>> 78bb3423f056e0d80f71fa2b776a6b4070b284b4
+=======
+  def test_date_uses_current_date_as_arg
+>>>>>>> c9d92a399a33d79ca6d2df82d11cd2c330112d41
     date_offset = DateOffset.new
     date_offset.date_formatter
 

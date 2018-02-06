@@ -1,5 +1,6 @@
-require './lib/offset'
-require './lib/key'
+# require './lib/offset'
+# require './lib/key'
+require './lib/rotator'
 
 require 'pry'
 
@@ -13,16 +14,16 @@ class Enigma
                         "4", "5", "6", "7", "8", "9", " ", ".", ","]
   end
 
-  def encrypt(string)
+  def encrypt(string, key)
     output_arr = []
     count = 0
-    date = DateOffset.new
+    rotator = Rotator.new(key)
     string.to_s.chars.map do |letter|
       if count == 4
         count = 0
       end
       index_value = @character_map.index(letter)
-      encr_index = (index_value + date.rotation_sequence[count]) % 39
+      encr_index = (index_value + rotator.rotation_sequence[count]) % 39
       count += 1
       output_arr << @character_map[encr_index]
     end

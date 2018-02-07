@@ -64,4 +64,5 @@ class Enigma
     end.join
     "#{decryption} ..end.."
   end
+
 end

@@ -1,7 +1,16 @@
 require './lib/rotator'
+require 'Date'
 require 'pry'
 
 class Enigma
+  attr_reader :key,
+              :date
+
+  def initialize
+    @key = ""
+    @date = ""
+  end
+
   def encryption(offset)
     character_map = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
                         "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
@@ -16,7 +25,9 @@ class Enigma
     cipher[letter]
   end
 
-  def encrypt(string, key, date)
+  def encrypt(string, key=rand(10000..99999), date=Date.today)
+    @key = key
+    @date = date
     rotator = Rotator.new
     offset = rotator.rotation_sequence(key, date)
     letters = string.to_s.downcase.split("")
@@ -37,11 +48,13 @@ class Enigma
   end
 
   def decrypt(string, key, date)
+    @key = key
+    @date = date
     rotator = Rotator.new
     offset = rotator.rotation_sequence(key, date)
     letters = string.to_s.downcase.split("")
     count = 0
-    letters.map do |letter|
+    decryption = letters.map do |letter|
       if count == 4
         count = 0
       end
@@ -49,5 +62,6 @@ class Enigma
       count += 1
       encrypted_letter
     end.join
+    "#{decryption} ..end.."
   end
 end

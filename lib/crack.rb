@@ -11,4 +11,4 @@ output_file.write(enigma.crack(input_text, ARGV[2]))
 output_file.close
 
 rotator = Rotator.new
-puts "#{enigma.key} #{enigma.date}"
+puts "Created 'cracked.txt' with the cracked key #{enigma.key} and date #{enigma.date}"

@@ -1,6 +1,4 @@
-require 'simplecov'
-require 'minitest/autorun'
-require 'minitest/pride'
+require_relative 'helper_test'
 require './lib/key'
 
 class KeyTest < Minitest::Test

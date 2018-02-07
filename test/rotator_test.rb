@@ -1,6 +1,4 @@
-require 'simplecov'
-require 'minitest/autorun'
-require 'minitest/pride'
+require_relative 'helper_test'
 require './lib/rotator'
 
 class RotatorTest < Minitest::Test

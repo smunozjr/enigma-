@@ -1,7 +1,7 @@
 require 'Date'
 require 'pry'
 
-class DateOffset
+class Offset
   def date_formatter(date=Date.today)
     formatted_date = []
     date_to_string = date.to_s

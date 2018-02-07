@@ -1,3 +1,4 @@
+require 'simplecov'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/rotator'
@@ -12,7 +13,6 @@ class RotatorTest < Minitest::Test
 
   def test_new_date_offset
     rotator = Rotator.new
-
     result = rotator.rotation_sequence.count
 
     assert_equal 4, result
@@ -20,7 +20,6 @@ class RotatorTest < Minitest::Test
 
   def test_pass_arguements
     rotator = Rotator.new
-
     result = rotator.rotation_sequence(41521, "030415")
     expected = [43, 17, 54, 26]
 

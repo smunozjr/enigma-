@@ -47,7 +47,7 @@ class Enigma
     cipher[letter]
   end
 
-  def decrypt(string, key, date)
+  def decrypt(string, key=rand(10000..99999), date=Date.today)
     @key = key
     @date = date
     rotator = Rotator.new

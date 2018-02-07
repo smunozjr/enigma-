@@ -140,4 +140,19 @@ class EnigmaTest < Minitest::Test
 
     assert_equal expected, actual
   end
+
+  def test_encrypt_word_with_todays_date
+    enigma = Enigma.new
+
+    result = enigma.encrypt("hello", 41521)
+
+    assert_equal "qy0 x", result
+  end
+
+  def test_decrypt_one_word_with_todays_date
+    enigma = Enigma.new
+    result = enigma.decrypt("qy0 x", 41521)
+
+    assert_equal "hello ..end..", result
+  end
 end

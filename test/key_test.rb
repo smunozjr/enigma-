@@ -4,7 +4,6 @@ require 'minitest/pride'
 require './lib/key'
 
 class KeyTest < Minitest::Test
-
   def test_key_exists
     key = Key.new
 
@@ -13,7 +12,6 @@ class KeyTest < Minitest::Test
 
   def test_takes_arguement_for_key
     key = Key.new
-
     result = key.random_key(41521)
     expected = [41, 15, 52, 21]
 
@@ -24,6 +22,6 @@ class KeyTest < Minitest::Test
     key = Key.new
     key.random_key
 
-    assert_equal 4, key.key_offsets.length
+    assert_equal 4, key.key_offsets.count
   end
 end

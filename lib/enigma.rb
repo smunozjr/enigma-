@@ -1,5 +1,4 @@
 require './lib/rotator'
-
 require 'pry'
 
 class Enigma

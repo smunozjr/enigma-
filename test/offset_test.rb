@@ -53,7 +53,7 @@ class OffsetTest < Minitest::Test
     assert_equal [], result
   end
 
-  def test_date_uses_current_date_as_arg
+  def test_date_uses_current_date_as_argument
     date_offset = DateOffset.new
     date_offset.date_formatter
 
@@ -62,7 +62,6 @@ class OffsetTest < Minitest::Test
 
   def test_takes_an_arguement
     offset = DateOffset.new
-
     offset.date_formatter(30415)
 
     assert_instance_of DateOffset, offset
@@ -75,12 +74,11 @@ class OffsetTest < Minitest::Test
     assert_equal 4, result
   end
 
-  def test_date_arr_from_arv
+  def test_last_four_date_squared
     offset = DateOffset.new
     result = offset.date_squared("030415")
     expected = [2, 2, 2, 5]
 
     assert_equal expected, result
   end
-
 end

@@ -10,5 +10,4 @@ output_file = File.open(ARGV[1], 'w')
 output_file.write(enigma.decrypt(input_text, ARGV[2], ARGV[3]))
 output_file.close
 
-rotator = Rotator.new
 puts "Created 'decrypted.txt' with the key #{enigma.key} and date #{enigma.date}"

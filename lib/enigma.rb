@@ -3,17 +3,12 @@ require 'Date'
 require 'pry'
 
 class Enigma
-  # attr_reader :key
+  attr_reader :key,
+              :date
 
-  # def initialize
-  #   @key = ""
-  # end
-  def key
-    @key
-  end
-
-  def date
-    @date
+  def initialize
+    @key = ""
+    @date = ""
   end
 
   def encryption(offset)

@@ -125,7 +125,6 @@ class EnigmaTest < Minitest::Test
   def test_pull_out_key_from_decrypt
     enigma = Enigma.new
     enigma.decrypt("hello", 41521, "030415")
-
     actual = enigma.key
     expected = 41521
 

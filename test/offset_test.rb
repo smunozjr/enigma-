@@ -1,8 +1,5 @@
-require 'simplecov'
-require 'minitest/autorun'
-require 'minitest/pride'
+require_relative 'helper_test'
 require './lib/offset'
-require 'pry'
 
 class OffsetTest < Minitest::Test
   def test_it_exists

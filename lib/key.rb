@@ -1,5 +1,3 @@
-require 'pry'
-
 class Key
   attr_reader :key,
               :key_offsets
@@ -9,7 +7,8 @@ class Key
     @key_offsets = []
   end
 
-  def random_key(key = rand(10000..99999))
+  def random_key(key=rand(10000..99999))
+    key = key.to_i
     key_index = key.digits.reverse
     @key_offsets << key_index[0..1].join.to_i
     @key_offsets << key_index[1..2].join.to_i

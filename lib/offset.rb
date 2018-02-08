@@ -1,5 +1,4 @@
 require 'Date'
-require 'pry'
 
 class Offset
   def date_formatter(date=Date.today)

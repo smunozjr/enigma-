@@ -2,7 +2,6 @@ require_relative 'helper_test'
 require './lib/enigma'
 
 class EnigmaTest < Minitest::Test
-
   def test_it_exists
     enigma = Enigma.new
 
@@ -14,7 +13,6 @@ class EnigmaTest < Minitest::Test
     result = enigma.encrypt_single("h", 1)
 
     assert_equal "i", result
-
   end
 
   def test_captial_letter
@@ -50,7 +48,6 @@ class EnigmaTest < Minitest::Test
     result = enigma.encrypt_single("h", 1)
 
     assert_equal "i", result
-
   end
 
   def test_captial_letter
@@ -105,7 +102,6 @@ class EnigmaTest < Minitest::Test
   def test_pull_out_key_from_encrypt
     enigma = Enigma.new
     enigma.encrypt("hello", 41521)
-
     actual = enigma.key
     expected = 41521
 
@@ -115,9 +111,8 @@ class EnigmaTest < Minitest::Test
   def test_pull_out_date_from_encrypt
     enigma = Enigma.new
     enigma.encrypt("hello", 41521, "030415")
-
     actual = enigma.date
-    expected = "030415"
+    expected = "30415"
 
     assert_equal expected, actual
   end

@@ -2,9 +2,6 @@ require './lib/offset'
 require './lib/key'
 require 'Date'
 
-require 'pry'
-
-
 class Rotator
   def initialize
     @rotation = []

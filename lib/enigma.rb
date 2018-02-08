@@ -62,7 +62,5 @@ class Enigma
       count += 1
       encrypted_letter
     end.join
-    "#{decryption} ..end.."
   end
-
 end

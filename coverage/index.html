@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-02-07T16:53:37-07:00">2018-02-07T16:53:37-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-02-07T18:26:21-07:00">2018-02-07T18:26:21-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,15 +25,15 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         13.31
+         13.36
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>7</b> files in total.
-    <b>152</b> relevant lines. 
-    <span class="green"><b>152</b> lines covered</span> and
+    <b>151</b> relevant lines. 
+    <span class="green"><b>151</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -53,11 +53,11 @@
       <tr>
         <td class="strong"><a href="#a013b0a8c037bee3309cdde52742e52a956c7127" class="src_link" title="lib/enigma.rb">lib/enigma.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>68</td>
-        <td>45</td>
-        <td>45</td>
+        <td>87</td>
+        <td>44</td>
+        <td>44</td>
         <td>0</td>
-        <td>13.8</td>
+        <td>14.0</td>
       </tr>
       
       <tr>
@@ -113,7 +113,7 @@
       <tr>
         <td class="strong"><a href="#d6c780fce451b41bff5e99f92ac1e880e26dc08f" class="src_link" title="test/rotator_test.rb">test/rotator_test.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>27</td>
+        <td>26</td>
         <td>15</td>
         <td>15</td>
         <td>0</td>
@@ -141,8 +141,8 @@
     <h3>lib/enigma.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>45</b> relevant lines. 
-      <span class="green"><b>45</b> lines covered</span> and
+      <b>44</b> relevant lines. 
+      <span class="green"><b>44</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -534,28 +534,142 @@
           <code class="ruby">    end.join</code>
         </li>
       
-        <li class="covered" data-hits="5" data-linenumber="65">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    &quot;#{decryption} ..end..&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby"></code>
         </li>
       
+        <li class="never" data-hits="" data-linenumber="67">
+          
+          
+          <code class="ruby">  # def crack(string, date)</code>
+        </li>
+      
         <li class="never" data-hits="" data-linenumber="68">
           
           
+          <code class="ruby">  #   key = 41519</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="69">
+          
+          
+          <code class="ruby">  #   string = string[-7..-1]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="70">
+          
+          
+          <code class="ruby">  #   cracking = decrypt(string, key, date)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="71">
+          
+          
+          <code class="ruby">  #   require &quot;pry&quot;; binding.pry</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="72">
+          
+          
+          <code class="ruby">  #   until cracking == &quot;..end..&quot; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="73">
+          
+          
+          <code class="ruby">  #     key += 1</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="74">
+          
+          
+          <code class="ruby">  #     cracking = decrypt(string, key, date)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="75">
+          
+          
+          <code class="ruby">  #   # require &quot;pry&quot;; binding.pry</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="76">
+          
+          
+          <code class="ruby">  #   end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="77">
+          
+          
+          <code class="ruby">  #   key</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="78">
+          
+          
+          <code class="ruby">  # end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="79">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="80">
+          
+          
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="81">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="82">
+          
+          
+          <code class="ruby"># enigma = Enigma.new</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="83">
+          
+          
+          <code class="ruby"># p enigma.crack(&quot;qy0 xrnxn7sxh&quot;, &quot;070218&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="84">
+          
+          
+          <code class="ruby"># p enigma.encrypt(&quot;The rain in spain stays mainly in the plain ..end..&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="85">
+          
+          
+          <code class="ruby"># p enigma.key</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="86">
+          
+          
+          <code class="ruby"># p enigma.date</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby"># p enigma.decrypt(&quot; t.c8mcsouhc917n4jmyr mc3mcs2 4n4jnmvjjqruhcpk.suk5&quot;, 10701)</code>
         </li>
       
     </ol>
@@ -1681,12 +1795,6 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
           
           
           <code class="ruby">end</code>

@@ -1,6 +1,5 @@
 require './lib/rotator'
 require 'Date'
-require 'pry'
 
 class Enigma
   attr_reader :key,
@@ -26,16 +25,15 @@ class Enigma
   end
 
   def encrypt(string, key=rand(10000..99999), date=Date.today)
-    @key = key
-    @date = date
     rotator = Rotator.new
+    offset = Offset.new
+    @key = key
+    @date = offset.date_formatter(date).to_s
     offset = rotator.rotation_sequence(key, date)
     letters = string.to_s.downcase.split("")
     count = 0
     letters.map do |letter|
-      if count == 4
-        count = 0
-      end
+      (count = 0) if count == 4
       encrypted_letter = encrypt_single(letter, offset[count])
       count += 1
       encrypted_letter
@@ -55,9 +53,7 @@ class Enigma
     letters = string.to_s.downcase.split("")
     count = 0
     decryption = letters.map do |letter|
-      if count == 4
-        count = 0
-      end
+      (count = 0) if count == 4
       encrypted_letter = decrypt_single(letter, offset[count])
       count += 1
       encrypted_letter
@@ -65,14 +61,13 @@ class Enigma
   end
 
   def crack(string, date)
-   key = 9999
-   cracking = decrypt(string, key, date)
-   until cracking[-7..-1] == "..end.." do
-     # binding.pry
-     cracking = decrypt(string, key, date)
-     key += 1
-     break if key == 99999
-   end
-  key -= 1
+    key = 9999
+    cracking = decrypt(string, key, date)
+    until cracking[-7..-1] == "..end.." do
+      cracking = decrypt(string, key, date)
+      key += 1
+      break if key == 99999
+    end
+    key -= 1
   end
 end

@@ -2,7 +2,6 @@ require_relative 'helper_test'
 require './lib/rotator'
 
 class RotatorTest < Minitest::Test
-
   def test_date_offset_exists
     rotator = Rotator.new
 

@@ -23,5 +23,4 @@ class RotatorTest < Minitest::Test
 
     assert_equal expected, result
   end
-
 end

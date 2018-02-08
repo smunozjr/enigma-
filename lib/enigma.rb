@@ -63,4 +63,16 @@ class Enigma
       encrypted_letter
     end.join
   end
+
+  def crack(string, date)
+   key = 9999
+   cracking = decrypt(string, key, date)
+   until cracking[-7..-1] == "..end.." do
+     # binding.pry
+     cracking = decrypt(string, key, date)
+     key += 1
+     break if key == 99999
+   end
+  key -= 1
+  end
 end

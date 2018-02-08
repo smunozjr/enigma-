@@ -154,5 +154,10 @@ class EnigmaTest < Minitest::Test
     assert_equal "hello", result
   end
 
+  def test_it_can_crack_the_key
+   enigma = Enigma.new
+   result = enigma.crack("qy0 xrnxn7sxh", "070218")
 
+   assert_equal 41521, result
+  end
 end

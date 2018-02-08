@@ -92,14 +92,14 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
     result = enigma.decrypt("9g", 41521, "030415")
 
-    assert_equal "52 ..end..", result
+    assert_equal "52", result
   end
 
   def test_decrypt_one_word
     enigma = Enigma.new
     result = enigma.decrypt("lv0.s", 41521, "030415")
 
-    assert_equal "hello ..end..", result
+    assert_equal "hello", result
   end
 
   def test_pull_out_key_from_encrypt
@@ -153,6 +153,14 @@ class EnigmaTest < Minitest::Test
     enigma = Enigma.new
     result = enigma.decrypt("qy0 x", 41521)
 
-    assert_equal "hello ..end..", result
+    assert_equal "hello", result
   end
+
+  def test_it_can_crack_the_key
+   enigma = Enigma.new
+   result = enigma.crack("qy0 xrnxn7sxh", "070218")
+
+   assert_equal 41521, result
+  end
+
 end

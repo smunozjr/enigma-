@@ -75,5 +75,4 @@ class Enigma
    end
   key -= 1
   end
-
 end
